@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    
+}
+.main-div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+}
+h1{
+    color: lightblue;
+}
+.recipes{
+    margin: 50px;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style: none;
+}
+a{
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px;
+    color: palevioletred;
+    ;
+    transition: transform 0.2s ease;
+}
+a:hover{
+    transform: scale(1.15);
+}

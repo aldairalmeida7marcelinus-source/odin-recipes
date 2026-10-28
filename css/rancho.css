@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+body{
+}
+.all-main-div{
+    padding: 50px;
+}
+.main-div{
+    display: flex;
+    flex-direction: inline-block;
+}
+.fazer-rancho{
+    display: flex;
+    flex-direction: column; 
+    gap: 50px; 
+    margin: 20px;
+}
+.igredientes-da-lista{
+    margin: 8px;
+}
+.descricao{
+    margin-bottom: -20px;
+}
+.descricao-dos-passos{
+    margin: 8px;
+}
+h1, 
+h2{
+    color: palevioletred;
+}
+h2{
+    border-bottom: 3px solid palevioletred;
+    width: 25%;
+}
+#img{
+    border-radius: 100%;
+    border-left: 2px solid palevioletred;
+    padding: 50px;
+    transition: transform 0.2s ease;
+}
+#img:hover{
+     transform: scale(1.15);
+}
+#pagina-inicial{
+    display: inline-block;
+    text-decoration: none;
+    color: palevioletred;
+    transition: transform 0.2s ease;
+}
+#pagina-inicial:hover{
+    transform: scale(1.15); 
+}
