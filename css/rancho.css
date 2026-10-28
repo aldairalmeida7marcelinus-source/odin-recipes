@@ -1,56 +1,154 @@
-*{
+
+* {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
-body{
+
+body {
+    line-height: 1.6;
 }
-.all-main-div{
-    padding: 50px;
+
+.all-main-div {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
 }
-.main-div{
+
+.main-div {
     display: flex;
-    flex-direction: inline-block;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
 }
-.fazer-rancho{
+
+.fazer-rancho {
     display: flex;
-    flex-direction: column; 
-    gap: 50px; 
+    flex-direction: column;
+    gap: 30px;
     margin: 20px;
+    flex: 1;
+    min-width: 0;
 }
-.igredientes-da-lista{
+
+.igredientes-da-lista {
     margin: 8px;
 }
-.descricao{
-    margin-bottom: -20px;
+
+.descricao {
+    margin-bottom: 10px;
 }
-.descricao-dos-passos{
+
+.descricao-dos-passos {
     margin: 8px;
 }
-h1, 
-h2{
+
+h1,
+h2 {
     color: palevioletred;
 }
-h2{
+
+h2 {
     border-bottom: 3px solid palevioletred;
-    width: 25%;
+    width: fit-content;
+    max-width: 100%;
 }
-#img{
-    border-radius: 100%;
+
+#img {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
     border-left: 2px solid palevioletred;
-    padding: 50px;
+    padding: 20px;
     transition: transform 0.2s ease;
 }
-#img:hover{
-     transform: scale(1.15);
+
+#img:hover {
+    transform: scale(1.05);
 }
-#pagina-inicial{
+
+#pagina-inicial {
     display: inline-block;
     text-decoration: none;
     color: palevioletred;
     transition: transform 0.2s ease;
 }
-#pagina-inicial:hover{
-    transform: scale(1.15); 
+
+#pagina-inicial:hover {
+    transform: scale(1.05);
+}
+
+/* Tablets e ecrãs médios */
+@media (max-width: 768px) {
+    .all-main-div {
+        padding: 25px;
+    }
+
+    .main-div {
+        gap: 20px;
+    }
+
+    .fazer-rancho {
+        margin: 10px;
+        gap: 25px;
+    }
+
+    #img {
+        max-width: 250px;
+    }
+
+    h2 {
+        width: fit-content;
+    }
+}
+
+/* Telemóveis */
+@media (max-width: 600px) {
+    .all-main-div {
+        padding: 16px;
+    }
+
+    .main-div {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .fazer-rancho {
+        margin: 10px 0;
+        gap: 20px;
+    }
+
+    #img {
+        max-width: 100%;
+        width: 100%;
+        padding: 10px;
+        align-self: center;
+    }
+
+    #img:hover,
+    #pagina-inicial:hover {
+        transform: none;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+        line-height: 1.3;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        width: fit-content;
+        max-width: 100%;
+    }
+
+    .igredientes-da-lista,
+    .descricao-dos-passos {
+        margin: 8px 0;
+    }
 }
