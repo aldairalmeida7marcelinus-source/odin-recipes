@@ -1,4 +1,8 @@
 
+/* =========================
+   ESTILIZAÇÃO GERAL
+========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -8,64 +12,119 @@
 
 body {
     line-height: 1.6;
+    color: #333;
 }
 
 .all-main-div {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 40px;
 }
 
+/* =========================
+   CONTENTOR PRINCIPAL
+========================= */
+
 .main-div {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     align-items: flex-start;
     gap: 30px;
 }
 
 .fazer-rancho {
+    order: 1;
     display: flex;
     flex-direction: column;
     gap: 30px;
-    margin: 20px;
-    flex: 1;
+    flex: 1 1 500px;
     min-width: 0;
 }
 
-.igredientes-da-lista {
-    margin: 8px;
-}
-
-.descricao {
-    margin-bottom: 10px;
-}
-
-.descricao-dos-passos {
-    margin: 8px;
-}
+/* =========================
+   TÍTULOS
+========================= */
 
 h1,
 h2 {
     color: palevioletred;
 }
 
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
 h2 {
+    font-size: 1.6rem;
     border-bottom: 3px solid palevioletred;
     width: fit-content;
     max-width: 100%;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   DESCRIÇÃO
+========================= */
+
+.descricao {
+    margin-bottom: 0;
+    line-height: 1.8;
+}
+
+/* =========================
+   INGREDIENTES E PASSOS
+========================= */
+
+.igredientes,
+.passos {
+    width: 100%;
+    min-width: 0;
+}
+
+.igredientes-detalhados,
+nav {
+    max-width: 100%;
+}
+
+ul,
+ol {
+    padding-left: 30px;
+    list-style-position: outside;
+}
+
+.igredientes-da-lista,
+.descricao-dos-passos {
+    margin: 8px 0;
+    padding-left: 3px;
+    line-height: 1.7;
+}
+
+li {
+    overflow-wrap: anywhere;
+}
+
+/* =========================
+   IMAGEM
+========================= */
+
+.amostra-rancho {
+    order: 2;
+    flex: 0 1 350px;
+    min-width: 0;
 }
 
 #img {
     display: block;
     width: 100%;
     max-width: 350px;
-    height: auto;
     aspect-ratio: 1 / 1;
+    height: auto;
     object-fit: cover;
     border-radius: 50%;
     border-left: 2px solid palevioletred;
-    padding: 20px;
+    padding: 10px;
     transition: transform 0.2s ease;
 }
 
@@ -73,10 +132,23 @@ h2 {
     transform: scale(1.05);
 }
 
+/* =========================
+   LINK PÁGINA INICIAL
+   SEMPRE NO FIM
+========================= */
+
+.voltar {
+    order: 3;
+    flex: 0 0 100%;
+    width: 100%;
+    margin-top: 10px;
+}
+
 #pagina-inicial {
     display: inline-block;
     text-decoration: none;
     color: palevioletred;
+    font-weight: bold;
     transition: transform 0.2s ease;
 }
 
@@ -84,51 +156,88 @@ h2 {
     transform: scale(1.05);
 }
 
-/* Tablets e ecrãs médios */
-@media (max-width: 768px) {
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 900px) {
     .all-main-div {
         padding: 25px;
     }
 
     .main-div {
-        gap: 20px;
-    }
-
-    .fazer-rancho {
-        margin: 10px;
         gap: 25px;
     }
 
-    #img {
-        max-width: 250px;
+    .fazer-rancho {
+        flex-basis: 400px;
+    }
+
+    .amostra-rancho {
+        flex-basis: 250px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
     }
 
     h2 {
-        width: fit-content;
+        font-size: 1.4rem;
     }
 }
 
-/* Telemóveis */
+/* =========================
+   TELEMÓVEIS
+========================= */
+
 @media (max-width: 600px) {
     .all-main-div {
         padding: 16px;
     }
 
     .main-div {
+        display: flex;
         flex-direction: column;
+        flex-wrap: nowrap;
         align-items: stretch;
+        gap: 25px;
+        min-width: 0;
     }
 
     .fazer-rancho {
-        margin: 10px 0;
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        flex: none;
+        width: 100%;
         gap: 20px;
+        min-width: 0;
+    }
+
+    .amostra-rancho {
+        order: 2;
+        flex: none;
+        width: 100%;
+        min-width: 0;
     }
 
     #img {
-        max-width: 100%;
         width: 100%;
-        padding: 10px;
-        align-self: center;
+        max-width: 350px;
+        margin: 0 auto;
+        padding: 8px;
+    }
+
+    .voltar {
+        order: 3;
+        flex: none;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    #pagina-inicial {
+        display: inline-block;
+        margin-top: 0;
     }
 
     #img:hover,
@@ -137,18 +246,44 @@ h2 {
     }
 
     h1 {
-        font-size: 1.7rem;
+        font-size: 1.8rem;
         line-height: 1.3;
+        overflow-wrap: anywhere;
     }
 
     h2 {
-        font-size: 1.25rem;
+        font-size: 1.3rem;
         width: fit-content;
         max-width: 100%;
+    }
+
+    .descricao {
+        line-height: 1.7;
+    }
+
+    ul,
+    ol {
+        padding-left: 30px;
+        margin-left: 0;
+        list-style-position: outside;
+    }
+
+    li {
+        padding-left: 3px;
+        overflow-wrap: anywhere;
     }
 
     .igredientes-da-lista,
     .descricao-dos-passos {
         margin: 8px 0;
+    }
+
+    .igredientes,
+    .passos,
+    .igredientes-detalhados,
+    nav {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
     }
 }
